@@ -1,9 +1,13 @@
 const geolocation = require('./geolocation')
+const forecast = require('./forecast')
+const log = console.log
 
-geolocation("Boston", (error, data) => {
+geolocation("Volta Redonda", (error, data) => {
     if (error) {
-        console.log('error')
+        log(error)
     }else{
-        console.log(data)
+        forecast(data, (response) => {
+            log(response.daily.summary)
+        })
     }
 })
