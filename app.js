@@ -1,7 +1,7 @@
 const geolocation = require('./geolocation')
 const forecast = require('./forecast')
 const log = console.log
-const argv = require('yargs').argv
+const argv = require('./argv')
 
 geolocation(argv.place, (error, data) => {
     if (error) {
